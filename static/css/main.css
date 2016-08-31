@@ -1,0 +1,26 @@
+body{
+	margin:0;
+}
+
+.mainImagePattern{
+	display:flex;
+	background: url(../img/pattern.jpg); 
+	height: 500px; 
+	justify-content: center; 
+	align-items: center;
+}
+
+.mainImage{
+	background:url(../img/main-image.png); 
+	height: 387px; 
+	width:747px
+}
+
+.content{
+	min-height: 500px;
+}
+
+.footer{
+	background:url(../img/footer.png); 
+	height: 49px; 
+}

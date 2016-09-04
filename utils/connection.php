@@ -1,7 +1,7 @@
 <?php
  error_reporting(E_ALL); ini_set('display_errors', 1);
 
-if ( ($handle = fopen("dbconf", "r") ) !== FALSE ) {
+if ( ($handle = fopen("utils/dbconf", "r") ) !== FALSE ) {
 	
 	$data = fgetcsv($handle, 1050, ",");
     

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt">
     <head>
         <title>Campanha Omunga</title>
+        <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="static/css/main.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
     <body>
-        <div class="logo"></div> 	   
         <div class="explanatory-container">
-            <div class="explanatory-text">Texto explicativo</div>
-        </div>
+            <div class="logo"></div> 
+        </div>      
         <div class="images-container">
             <?php
                 require_once("utils/connection.php");
@@ -21,7 +21,7 @@
                     echo "
                         <div class='images-list'>
                             <img data-toggle='modal' data-target='#$row[0]' data-lightbox='image-1' data-title='My caption' class='images' src='static/img/$row[1]_small.jpg'/>
-                            <p class='images-autor'>Pintado por $row[3]</p>
+                            <p class='images-autor'>$row[3]</p>
                         </div>
                         <div class='modal fade modalPrincipal' id='$row[0]' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'>
                           <div class='modal-dialog' role='document'>
@@ -29,9 +29,15 @@
                               <div class='modal-body'>
                                 <img class='image-expanded' src='static/img/$row[1]_large.jpg'/>
                                 <div class='image-content'>
-                                <input class='user-email$row[0]'/>
-                                <a class='btn btn-primary' onClick='validateImage($row[0], $row[1])'>Baixar</a>
-                                <a id='download'></a>
+                                    <div class='image-description'>
+                                        $row[2]
+                                    </div>
+                                    <div class='email-download form-group'>
+                                        <label for='emailinput'>Digite seu e-mail</label>
+                                        <input id='emailinput' class='form-control email-input user-email$row[0]' placeholder='omunga@omunga.com'/>
+                                        <a class='btn btn-success button-download' onClick='validateImage($row[0], $row[1])'>Download</a>
+                                        <a id='download'></a>
+                                    </div>
                                 </div>
                               </div>
                             </div>
@@ -83,14 +89,25 @@
                                 alert("Uma imagem já foi escolhida com este e-mail!");
                                 break;
                             case 'naotem':
-                                me.sendEmail();
-                                me.downloadImage(oid, imagem, email);
+                                me.confirmDownload(oid, imagem, email);
                                 break;
                             default:
                                 alert("Ocorreu uma falha no servidor, tente novamente mais tarde!");
                         }
                     }
                 })
+            }
+
+            function confirmDownload(oid, imagem, email){
+                var me = this,
+                    alert = confirm("Tem certeza que deseja escolher esta foto?");
+
+                if (alert == true) {
+                    me.sendEmail();
+                    me.downloadImage(oid, imagem, email);
+                } else {
+                    me.closeModal();
+                }                
             }
 
             function downloadImage(oid, imagem, email){  

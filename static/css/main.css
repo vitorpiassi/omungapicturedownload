@@ -1,15 +1,30 @@
 .logo{
 	background: url(../img/logo.png); 
-	height: 74px;
-	width: 199px;
+	position: absolute;
+	width: 680px;
+	height: 240px;
 }
 
 .explanatory-container{
+	border-bottom: 1px solid #484848;
 	width: 100%;
-	height: 200px;
+	height: 300px;
 	display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	justify-content:center;
-	align-items:center;
+	-ms-justify-content: center;
+	-webkit-justify-content: center;
+	-ms-align-items: center;
+	-webkit-align-items: center;
+	align-items: center;
+	background: red; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left top, #F1662F, #EA382E); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(bottom right, #F1662F, #EA382E); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(bottom right, #F1662F, #EA382E); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to bottom right, #F1662F, #EA382E); /* Standard syntax */
 }
 
 .explanatory-text{
@@ -19,7 +34,7 @@
 
 .images-container{
 	width: 100%;
-	height: 80%;
+	margin-top: 30px;
 	display: flex;
 	display: -webkit-box;
 	display: -moz-box;
@@ -27,25 +42,35 @@
 	display: -webkit-flex;
 	-webkit-flex-flow: row wrap;
   	justify-content: space-around;
+	-ms-justify-content: space-around;
+	-webkit-justify-content: space-around;
 }
 
 .images{
 	height: 300px;
 	width: 300px;
 	cursor: pointer;
+	border-radius: 5px;
+	padding: 1px;
+    border: 1px solid #808080;
+    background-color: #FFFFFF;
 }
 
 .images-autor{
 	position: absolute;
-    margin-top: -304px;
-    background-color: rgba(30,30,30,0.7);
+    margin-top: -30px;
+    background-color: rgba(0,0,0,0.8);
     color: white;
     width: 300px;
     display: none;
-    height: 25px;
+    height: 30px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    text-align: center;
+	padding-top: 5px;
 }
 
-.images:hover + .images-autor{
+.images:hover + .images-autor, .images-autor:hover{
 	display:block;
 }
 
@@ -61,4 +86,22 @@
 .image-content{
 	height: 90px;
     width: 100%;
+    display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+}
+
+.email-download{
+	width: 50%;
+}
+
+.button-download{
+	margin-top: 5px;
+	float: right;
+}
+
+.image-description{
+	flex: 0 50%;
 }

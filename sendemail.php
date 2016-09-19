@@ -19,8 +19,8 @@
 
     $headers = "MIME-Version: 1.1\r\n";
     $headers .= "Content-type: text/plain; charset=UTF-8\r\n";
-    $headers .= "From: vitorpiassi@gmail.com\r\n"; // remetente
-    $headers .= "Return-Path: vitorpiassi@gmail.com\r\n";
+    $headers .= "From: roberto.pascoal@omunga.com\r\n"; // remetente
+    $headers .= "Return-Path: roberto.pascoal@omunga.com\r\n";
     $envio = mail($email, "Campanha Omunga", $mensagem, $headers);
      
     if($envio)

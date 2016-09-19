@@ -30,12 +30,13 @@
                                 <img class='image-expanded' src='static/img/$row[1]_large.jpg'/>
                                 <div class='image-content'>
                                     <div class='image-description'>
-                                        $row[2]
+                                        ".utf8_encode($row[2])."
                                     </div>
                                     <div class='email-download form-group'>
                                         <label for='emailinput'>Digite seu e-mail</label>
                                         <input id='emailinput' class='form-control email-input user-email$row[0]' placeholder='omunga@omunga.com'/>
                                         <a class='btn btn-success button-download' onClick='validateImage($row[0], $row[1])'>Download</a>
+                                        <a class='btn btn-default button-close-modal' onClick='closeModal()'>Fechar</a>
                                         <a id='download'></a>
                                     </div>
                                 </div>
@@ -160,15 +161,6 @@
                     data: {
                         email: $('.user-email').val(),
                         image: image
-                    },
-                    success:function(response)
-                    {   
-                        //if(response == "true"){
-                            //me.sendEmail();
-                            //me.downloadImage();
-                        //}
-                        //else
-                            //alert("Não foi possível baixar a imagem, atualize a página e tente novamente!");
                     }
                 })
             }

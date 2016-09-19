@@ -1,8 +1,7 @@
 .logo{
 	background: url(../img/logo.png); 
-	position: absolute;
 	width: 680px;
-	height: 240px;
+	height: 290px;
 }
 
 .explanatory-container{
@@ -11,7 +10,6 @@
 	height: 300px;
 	display: flex;
 	display: -webkit-box;
-	display: -moz-box;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	justify-content:center;
@@ -35,15 +33,7 @@
 .images-container{
 	width: 100%;
 	margin-top: 30px;
-	display: flex;
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	-webkit-flex-flow: row wrap;
-  	justify-content: space-around;
-	-ms-justify-content: space-around;
-	-webkit-justify-content: space-around;
+	text-align: center;
 }
 
 .images{
@@ -75,7 +65,8 @@
 }
 
 .images-list{
-	margin-bottom: 50px;
+	margin: 10px;
+	display: inline-block;
 }
 
 .image-expanded{
@@ -88,7 +79,6 @@
     width: 100%;
     display: flex;
 	display: -webkit-box;
-	display: -moz-box;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 }
@@ -99,6 +89,12 @@
 
 .button-download{
 	margin-top: 5px;
+	float: right;
+}
+
+.button-close-modal{
+	margin-top: 5px;
+	margin-right: 5px;
 	float: right;
 }
 
